@@ -2,8 +2,8 @@ package service
 
 import (
 	"fmt"
-	"github.com/ssszzzLiiiShuai/go_calculator/src/model"
-	"github.com/ssszzzLiiiShuai/go_calculator/src/util"
+	"github.com/smiecj/go_calculator/src/model"
+	"github.com/smiecj/go_calculator/src/util"
 	"log"
 	"regexp"
 	"strconv"

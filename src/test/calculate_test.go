@@ -1,7 +1,7 @@
 package test
 
 import (
-	"github.com/ssszzzLiiiShuai/go_calculator/src/service"
+	"github.com/smiecj/go_calculator/src/service"
 	"github.com/stretchr/testify/require"
 	"log"
 	"testing"
