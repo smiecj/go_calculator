@@ -1,6 +1,6 @@
 package model
 
-import "github.com/smiecj/go_calculator/src/util"
+import "github.com/smiecj/go_calculator/util"
 
 // 计算公式
 type Calculation struct {
