@@ -21,6 +21,10 @@ func TestPureNumber(t *testing.T) {
 	ret, err = service.Calculate("6 * ( 2 + 3)", map[string]float64{})
 	require.Equal(t, nil, err)
 	require.Equal(t, float64(30), ret)
+
+	ret, err = service.Calculate("(4490-0)*100/4490", map[string]float64{})
+	require.Equal(t, nil, err)
+	require.Equal(t, float64(100), ret)
 }
 
 func TestVariable(t *testing.T) {

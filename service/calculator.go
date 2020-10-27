@@ -164,7 +164,8 @@ func recursiveCalculate(startIndex, endIndex int, calculation string, bracketInd
 		if util.PRIORITY_MULANDDIV != currentCalculation.Priority {
 			tempCalculationArr = append(tempCalculationArr, currentCalculation)
 		} else {
-			lastCalculation, nextCalculation := calculationArr[index-1], calculationArr[index+1]
+			lastCalculation, nextCalculation := tempCalculationArr[len(tempCalculationArr)-1],
+				calculationArr[index+1]
 			newCalculation := model.Calculation{
 				Type:     util.Number,
 				Priority: util.PRIORITY_EMPTY,
