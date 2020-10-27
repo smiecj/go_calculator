@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/smiecj/go_calculator/model"
 	"github.com/smiecj/go_calculator/util"
-	"log"
 	"regexp"
 	"strconv"
 	"strings"
@@ -15,11 +14,11 @@ var (
 )
 
 // 判断整个表达式是否符合规范，并返回小括号对应的下标
-func IsValidCalculation(calculation string) (map[int]int, error) {
+func isValidCalculation(calculation string) (map[int]int, error) {
 	bracketIndexMap := make(map[int]int)
 	bracketLeftIndexArr := make([]int, 0)
 	if 0 == len(calculation) {
-		log.Printf("[IsValidCalculation] 计算公式长度为0，不合法!")
+		//log.Printf("[isValidCalculation] 计算公式长度为0，不合法!")
 		return bracketIndexMap, fmt.Errorf(util.ERR_MSG_INVALID_CALCULATION)
 	}
 
@@ -207,7 +206,7 @@ func recursiveCalculate(startIndex, endIndex int, calculation string, bracketInd
 // 计算主方法入口
 func Calculate(calculation string, valValueMap map[string]float64) (float64, error) {
 	calculation = strings.ReplaceAll(calculation, " ", "")
-	bracketIndexMap, err := IsValidCalculation(calculation)
+	bracketIndexMap, err := isValidCalculation(calculation)
 	if nil != err {
 		return 0, err
 	} else {
