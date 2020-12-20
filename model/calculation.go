@@ -1,3 +1,4 @@
+// package model declare calculation model
 package model
 
 import "github.com/smiecj/go_calculator/util"

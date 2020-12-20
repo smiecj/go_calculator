@@ -1,3 +1,4 @@
+// package service declare the main calculate logic
 package service
 
 import (
