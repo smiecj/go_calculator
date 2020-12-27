@@ -7,6 +7,7 @@ import (
 	"testing"
 )
 
+// 测试计算纯数字
 func TestPureNumber(t *testing.T) {
 	ret, err := service.Calculate("1 + 2 + 3", map[string]float64{})
 	if nil != err {
@@ -27,6 +28,7 @@ func TestPureNumber(t *testing.T) {
 	require.Equal(t, float64(100), ret)
 }
 
+// 测试变量计算
 func TestVariable(t *testing.T) {
 	variableMap := map[string]float64{
 		"v0": 3,
@@ -52,4 +54,7 @@ func TestVariable(t *testing.T) {
 	require.Equal(t, nil, err)
 	require.Equal(t, float64(80), ret)
 
+	ret, err = service.Calculate("(v0+v1)/(v2+v3)", variableMap)
+	require.Equal(t, nil, err)
+	log.Printf("[test] calculate ret: %.2f", ret)
 }
