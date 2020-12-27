@@ -76,7 +76,8 @@ func recursiveCalculate(startIndex, endIndex int, calculation string, bracketInd
 		return 0, nil
 	}
 	// 如果当前运算本身最外层就是被括号包括，直接去掉后递归计算
-	if util.BRACKET_LEFT == calculation[startIndex] && util.BRACKET_RIGHT == calculation[endIndex] {
+	// 20201227: fix-1: 不能以两头分别是左括号和右括号就认为 是同一对括号，还是要用 bracketIndexMap 做位置判断，必须是对应的括号
+	if util.BRACKET_LEFT == calculation[startIndex] && endIndex == bracketIndexMap[startIndex] {
 		return recursiveCalculate(startIndex+1, endIndex-1, calculation, bracketIndexMap, valueMap)
 	}
 
