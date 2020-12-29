@@ -1,10 +1,11 @@
 package test
 
 import (
-	"github.com/smiecj/go_calculator/service"
-	"github.com/stretchr/testify/require"
 	"log"
 	"testing"
+
+	"github.com/smiecj/go_calculator/service"
+	"github.com/stretchr/testify/require"
 )
 
 // 测试计算纯数字
@@ -36,6 +37,8 @@ func TestVariable(t *testing.T) {
 		"v2": 8,
 		"v3": 11,
 	}
+	emptyVariableMap := map[string]float64{}
+
 	ret, err := service.Calculate("v0 + v1", variableMap)
 	if nil != err {
 		log.Printf("计算失败，错误原因: %s", err.Error())
@@ -55,6 +58,10 @@ func TestVariable(t *testing.T) {
 	require.Equal(t, float64(80), ret)
 
 	ret, err = service.Calculate("(v0+v1)/(v2+v3)", variableMap)
+	require.Equal(t, nil, err)
+	log.Printf("[test] calculate ret: %.2f", ret)
+
+	ret, err = service.Calculate("4", emptyVariableMap)
 	require.Equal(t, nil, err)
 	log.Printf("[test] calculate ret: %.2f", ret)
 }

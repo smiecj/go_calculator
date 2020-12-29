@@ -3,11 +3,12 @@ package service
 
 import (
 	"fmt"
-	"github.com/smiecj/go_calculator/model"
-	"github.com/smiecj/go_calculator/util"
 	"regexp"
 	"strconv"
 	"strings"
+
+	"github.com/smiecj/go_calculator/model"
+	"github.com/smiecj/go_calculator/util"
 )
 
 var (
@@ -72,7 +73,7 @@ func isValidCalculation(calculation string) (map[int]int, error) {
 // 计算递归方法，主要逻辑
 func recursiveCalculate(startIndex, endIndex int, calculation string, bracketIndexMap map[int]int,
 	valueMap map[string]float64) (float64, error) {
-	if startIndex >= endIndex {
+	if startIndex > endIndex {
 		return 0, nil
 	}
 	// 如果当前运算本身最外层就是被括号包括，直接去掉后递归计算
