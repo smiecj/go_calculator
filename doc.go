@@ -1,5 +1,5 @@
 /*
- * Copyright lifeng
+ * Copyright smiecj
  */
 
 /*
@@ -7,4 +7,4 @@ Package go_calculator is a tool for calculate some simple arithmetic with input 
 
 See readme for more details.
 */
-package go_calculator
+package calculator

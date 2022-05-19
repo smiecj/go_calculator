@@ -1,5 +1,4 @@
-// package util is some constant and type which is use for calculation.
-package util
+package calculator
 
 // calculation type in the formula
 type CalculationType uint
@@ -23,44 +22,46 @@ const (
 // 所有合法字符通配符
 const (
 	// invalid formular check regex
-	VALID_ALL_CHARACTER_REGEX = "^([0-9]|[a-z]|[A-Z]|\\(|\\)|\\+|\\-|\\*|\\/).*$"
+	ValidAllCharacterRegex = "^([0-9]|[a-z]|[A-Z]|\\(|\\)|\\+|\\-|\\*|\\/).*$"
 )
 
 // 运算符
 const (
 	// operator add
-	OPERATOR_ADD = '+'
+	OperatorAdd = '+'
 	// operator sub
-	OPERATOR_SUB = '-'
+	OperatorSub = '-'
 	// operator mul
-	OPERATOR_MUL = '*'
+	OperatorMul = '*'
 	// operator div
-	OPERATOR_DIV = '/'
+	OperatorDiv = '/'
 
 	// left bracket
-	BRACKET_LEFT = '('
+	BracketLeft = '('
 	// right bracket
-	BRACKET_RIGHT = ')'
+	BracketRight = ')'
 )
 
 // 优先级
 const (
 	// highest priority: bracket
-	PRIORITY_BRACKET = 10
+	PriorityBracket = 10
 	// multiplication and division has medium priority
-	PRIORITY_MULANDDIV = 2
+	PriorityMulAndDiv = 2
 	// addition and subtraction has lowest priority
-	PRIORITY_ADDANDSUB = 1
+	PriorityAddAndSub = 1
 	// some calculation type do not need priority, for example: number
-	PRIORITY_EMPTY = 0
+	PriorityEmpty = 0
 )
 
 // 一些错误信息
 const (
 	// err msg: invalid calculation
-	ERR_MSG_INVALID_CALCULATION = "不合法的运算符！"
+	ErrMsgInvalidCalculation = "invalid calculation"
 	// err msg: some variable do not have declared number
-	ERR_MSG_VALUE_NOT_EXIST = "参与计算的变量没有实际值！"
+	ErrMsgValueNotExist = "no value to the variable"
 	// err msg: div by a zero number
-	ERR_MSG_DIV_ZERO = "除0错误！"
+	ErrMsgDivZero = "div 0"
+
+	ErrMsgInvalidComparator = "invalid comparator"
 )
